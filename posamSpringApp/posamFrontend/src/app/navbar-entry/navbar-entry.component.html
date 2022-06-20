@@ -1,0 +1,20 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4">
+  <div class="container">
+    <a class="navbar-brand" [routerLink]='["/"]'>
+      <img src="../../assets/redcross.png" width="22" height="22" class="d-inline-block align-top" alt="redcross">
+      Nemocničná aplikácia</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div style="margin-left: 5%" class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]='["/registration"]' >Registrácia</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]='["/addfingerprint"]' >Pridať odtlačok</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

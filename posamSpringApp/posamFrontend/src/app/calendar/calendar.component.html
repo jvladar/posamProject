@@ -1,0 +1,82 @@
+<app-navbar-doctor [doctor_id]="doctor_id"></app-navbar-doctor>
+<div class="container">
+  <div class="fontik">
+    <p>Najbližšie návštevy</p>
+  </div>
+  <a class="btn stylenew" routerLink="add">Nová návšteva</a>
+
+  <table class="table table-bordered table-striped table-hover" datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger">
+    <thead>
+    <tr>
+      <th>Čas</th>
+      <th>Popis</th>
+      <th>Meno pacienta</th>
+      <th>Číslo pacienta</th>
+      <th class="icon-link-column"></th>
+      <th class="icon-link-column"></th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <ng-container *ngFor="let patient of patients">
+      <ng-container *ngFor="let visit of patient.visits">
+        <tr *ngIf=" visit.id != show_id">
+          <td>{{visit.dateandtime | date: 'dd/MM/yyyy HH:mm' :'GMT'}} </td>
+          <td>{{visit.description}} </td>
+          <td><a class="name" [routerLink]="['/patients',doctor_id,patient.id,'edit']">{{patient.name}}</a></td>
+          <td>{{patient.id_number}}</td>
+          <td><button type="button" class="btn btn-secondary" (click)="showhideUtility(visit.id)"><i class="fa-regular fa-pen-to-square"></i></button></td>
+          <td><a (click)="delete(visit)" class="btn btn-secondary"><i class="fa-solid fa-trash"></i></a></td>
+        </tr>
+        <tr *ngIf="!visible && visit.id==show_id">
+          <td colspan=6>
+          <form (submit)="submit(form)" #form=ngForm *ngIf="visit"
+                [class.was-validated]="form.submitted || form.touched">
+            <table>
+              <tr>
+
+                  <input type="number" class="form-control idsetup" id="exampleInput" name="id" [(ngModel)]="visit.id" required >
+
+                <td><input type="datetime-local" class="form-control colsetup" id="yako" name="dateandtime" [ngModel]="visit.dateandtime | date:'yyyy-MM-ddTHH:mm':'GMT'" required></td>
+
+                <td>
+                  <textarea class="form-control" id="exampleInputName1" name="description"[(ngModel)]="visit.description" required rows="5"></textarea></td>
+
+                  <td><button type="submit" class="btn btn-primary button-margin colsetup">UPRAVIŤ</button><td>
+
+                <td><button type="button" class="btn btn-secondary button-margin colsetup" (click)="showhideUtility(visit.id)"><i class="fa-regular fa-pen-to-square"></i></button><td>
+              </tr>
+            </table>
+          </form>
+          </td>
+        </tr>
+
+        <!--<div *ngIf="visible && visit.id==show_id">-->
+          <!--<form (submit)="submit(form)" #form=ngForm *ngIf="visit"
+                [class.was-validated]="form.submitted || form.touched">
+              <div class="form-group" style="display: none">
+                <input type="number" class="form-control" id="exampleInput" name="id"[(ngModel)]="visit.id" required >
+              </div>
+            <td>
+            <div class="form-group">
+              <label for="exampleInputName1" class="form-label">Popis</label>
+              <textarea class="form-control" id="exampleInputName1" name="description"[(ngModel)]="visit.description" required rows="3"></textarea>
+            </div>
+            </td>
+            <td>
+            <div class="form-group">
+              <label for="yako" class="form-label">Čas</label>
+              <input type="datetime-local" class="form-control" id="yako" name="dateandtime" [ngModel]="visit.dateandtime | date:'yyyy-MM-ddTHH:mm'" required>
+            </div>
+            </td>
+            <br>
+            <td>
+              <button type="submit" class="btn btn-primary">Upraviť</button>
+            </td>
+          </form>-->
+        <!--</div>-->
+      </ng-container>
+    </ng-container>
+    </tbody>
+  </table>
+</div>

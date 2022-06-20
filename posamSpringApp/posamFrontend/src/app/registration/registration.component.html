@@ -1,0 +1,32 @@
+<app-navbar-entry></app-navbar-entry>
+<div class="container">
+  <form (submit)="submit(form)" #form=ngForm [class.was-validated]="form.submitted || form.touched">
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Meno</label>
+      <input type="text" class="form-control" id="exampleInputEmail1" name="name" [(ngModel)]="user.name" required>
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputEmail2" class="form-label">Prihlasovacie meno</label>
+      <input type="text" class="form-control" id="exampleInputEmail2" name="username" [(ngModel)]="user.username" required>
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputEmail3" class="form-label">Heslo</label>
+      <input type="password" class="form-control" id="exampleInputEmail3" name="password" [(ngModel)]="user.password" required>
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputDepartment1" class="form-label">Odelenie</label>
+      <select id="exampleInputDepartment1" class="form-select"  name="department" [(ngModel)]="user.department" required>
+        <option value="OCNE">Ocne</option>
+        <option value="CHIRURGIA">Chirurgia</option>
+        <option value="KOZNE">Kozne</option>
+        <option value="PSYCHIATRIA">Psychiatria</option>
+        <option value="KARDIOLOGIA">Kardiologia</option>
+        <option value="ORTOPEDIA">Ortopedia</option>
+      </select>
+    </div>
+    <button type="submit" class="btn btn-lg">Zaregistrovať</button>
+  </form>
+  <br>
+
+  <h2>{{messageDetail?.message}}</h2>
+</div>

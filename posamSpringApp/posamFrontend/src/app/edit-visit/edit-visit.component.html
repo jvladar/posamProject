@@ -1,0 +1,23 @@
+<app-navbar-doctor [doctor_id]="doctor_id"></app-navbar-doctor>
+<div class="container">
+  <div class="fontik">
+    <p>Upraviť návštevu</p>
+  </div>
+  <form (submit)="submit(form)" #form=ngForm *ngIf="visit"
+        [class.was-validated]="form.submitted || form.touched">
+    <div class="form-group">
+      <label for="exampleInputName1" class="form-label" class="tab-labels">Popis</label>
+        <input type="textarea" class="form-control" id="exampleInputName1" name="description"[(ngModel)]="visit.description" required >
+    </div>
+    <br>
+    <div class="form-group">
+      <label for="yako" class="form-label" class="tab-labels">Čas</label>
+      <input type="datetime-local" class="form-control" id="yako" name="dateandtime" [ngModel]="visit.dateandtime | date:'yyyy-MM-ddTHH:mm':'GMT'" required>
+    </div>
+    <br>
+    <div class="centerbtn">
+      <button type="submit" class="btn btn-primary">Upraviť</button>
+    </div>
+  </form>
+</div>
+

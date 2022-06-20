@@ -1,0 +1,28 @@
+.btn {
+  background-color: #9c27b0; /* Green */
+  color:white;
+  transition: all .5s ease;
+}
+.btn:hover {
+  background: #4a148c;
+  transform: translateY(-2px);
+}
+.fontik{
+  text-align: center;
+  font-size: xx-large;
+}
+
+.btn:hover .zmdi {
+  color: #5acbda;
+}
+
+.btn .zmdi {
+  font-size: 48px;
+  display: block;
+  color: #ff8a6b;
+  margin-bottom: 8px;
+  transition: all .5s ease;
+}
+.stylenew{
+  margin-bottom: 3%;
+}

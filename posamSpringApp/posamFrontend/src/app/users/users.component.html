@@ -1,0 +1,57 @@
+<div class="bckg">
+<app-navbar-doctor [doctor_id]="doctor_id"></app-navbar-doctor>
+<div class="container">
+  <div class="row">
+    <div class="col-sm">
+    </div>
+    <div class="col-sm center colorsection fade-in">
+      <div class="text-center">
+        <a>Vitajte</a>
+        <h1>{{user?.name}}</h1>
+      </div>
+      <div class="row">
+        <div class="col-sm-6 tabtext">
+          <p>PRIHLASOVACIE MENO:</p>
+        </div>
+        <div class="col-sm-5">
+          <p>{{user?.username}}</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-6 tabtext">
+          <p>ODELENIE:</p>
+        </div>
+        <div class="col-sm-5">
+          <p>{{user?.department}}</p>
+        </div>
+      </div>
+      <div class="text-center">
+        <button class="btn prof-btn btn-primary" type="button" [routerLink]="['edit']">
+          <span role="status" aria-hidden="true"></span>Môj profil
+        </button>
+      </div>
+    </div>
+    <div class="col-sm">
+    </div>
+  </div>
+<!--<table class="table table-striped">
+  <thead>
+  <tr>
+    <th>Meno</th>
+    <th>Prihlasovacie meno</th>
+    <th>Pracovisko</th>
+    <th class="icon-link-column"></th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td>{{user?.name}}</td>
+    <td>{{user?.username}}</td>
+    <td>{{user?.department}}</td>
+    <td><button type="button" class="btn btn-secondary" [routerLink]="['edit']"><i class="fa-regular fa-pen-to-square"></i></button></td>
+  </tr>
+  </tbody>
+</table>-->
+</div>
+</div>
+

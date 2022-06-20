@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
+
+body {
+  font-family: 'Roboto Slab', serif;
+}
+
+.idsetup{
+  display: none;
+}
+
+.colsetup{
+  display: flex; /* establish flex container */
+  justify-content: center; /* center flex items horizontally, in this case */
+  align-items: center;
+}
+
+.button-margin{
+  margin-left:10%;
+  margin-right:10%;
+  width:auto
+}
+.name {
+  color: #9c27b0;
+  text-decoration: none;
+}
+.stylenew{
+  margin-bottom: 3%;
+}
+
+.name:hover {
+  color: #4a148c;
+  text-decoration:none;
+  cursor:pointer;
+}
+.btn {
+  background-color: #9c27b0;
+  color:white;
+  transition: all .5s ease;
+}
+.btn:hover {
+  background: #4a148c;
+  transform: translateY(-2px);
+}
+
+.btn:hover .zmdi {
+  color: #5acbda;
+}
+.text-center{
+  font-size: large;
+}
+
+input[type="text"],
+textarea {
+  width:50rem;
+  padding: 3px;
+  border: none;
+  border-radius: 10px;
+}
+
+.btn .zmdi {
+  font-size: 48px;
+  display: block;
+  color: #ff8a6b;
+  margin-bottom: 8px;
+  transition: all .5s ease;
+}

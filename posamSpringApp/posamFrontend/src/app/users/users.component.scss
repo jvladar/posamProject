@@ -1,0 +1,70 @@
+.bckg{
+  background-image: url("bcg_violet.png");
+  color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  overflow: auto;
+}
+h1{
+  padding-top: 25%;
+}
+.btn {
+  background-color: #9c27b0; /* Green */
+  color:white;
+  transition: all .5s ease;
+  font-size: xx-large;
+  margin-top: 5rem;
+}
+
+.tabtext{
+  text-align: right;
+}
+
+
+.btn:hover {
+  background: #4a148c;
+  transform: translateY(-2px);
+}
+.text-center {
+  text-align: center;
+  font-size: 6rem;
+  padding-bottom: 2rem;
+}
+.colorsection {
+  text-align: center;
+  border-style: solid;
+  border-color: black;
+  padding-top: 5rem;
+  border-radius: 10px;
+}
+
+.btn:hover .zmdi {
+  color: #5acbda;
+}
+
+.btn .zmdi {
+  font-size: 48px;
+  display: block;
+  color: #ff8a6b;
+  margin-bottom: 8px;
+  transition: all .5s ease;
+}
+.fade-in {
+  opacity: 1;
+  animation-name: fadeInOpacity;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in;
+  animation-duration: 1s;
+}
+
+@keyframes fadeInOpacity {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

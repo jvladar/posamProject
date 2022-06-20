@@ -1,0 +1,23 @@
+<app-navbar-entry></app-navbar-entry>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm">
+      </div>
+      <div class="col-sm colorsection fade-in">
+        <a class="text-center">Prihlásenie používateľa</a>
+        <br>
+        <button class="btn btn-primary" (click)="scan()" type="button">
+          <span role="status" [ngClass]="btnVal =='Skenovať' ? 'btn-primary': 'spinner-border spinner-border-m'" aria-hidden="true"></span>
+          {{btnVal}}
+        </button>
+        <div>
+          <img class="imgset" src="./assets/fingerprint.webp" alt="lll" >
+        </div>
+        <p class = "fontik warning">{{sv.message}}</p>
+      </div>
+      <div class="col-sm">
+      </div>
+  </div>
+  </div>
+</body>

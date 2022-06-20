@@ -1,0 +1,25 @@
+<app-navbar-doctor [doctor_id]="doctor_id"></app-navbar-doctor>
+<div class="container">
+  <div class="fontik">
+    <p>Zoznam pacientov</p>
+  </div>
+  <a class="btn stylenew" routerLink="add">Nový pacient</a>
+    <table class="table table-bordered table-striped table-hover" datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger">
+      <thead>
+      <tr>
+        <th>Meno pacienta</th>
+        <th>Číslo pacienta</th>
+        <th>Detail</th>
+        <th class="icon-link-column"></th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let patient of patients">
+        <td>{{patient.name}} </td>
+        <td>{{patient.id_number}}</td>
+        <td><a [routerLink]="[patient.id,'edit']" class="btn"><i class="fa-regular fa-pen-to-square"></i></a></td>
+        <td><a (click)="delete(patient)" class="btn"><i class="fa-solid fa-trash"></i></a></td>
+      </tr>
+      </tbody>
+    </table>
+</div>

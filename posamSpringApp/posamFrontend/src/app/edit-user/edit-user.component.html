@@ -1,0 +1,33 @@
+<app-navbar-doctor [doctor_id]="doctor_id"></app-navbar-doctor>
+<div class="container">
+  <div class="fontik">
+    <p>Môj profil</p>
+  </div>
+  <form (submit)="submit(form)" #form=ngForm *ngIf="user"
+        [class.was-validated]="form.submitted || form.touched">
+    <div class="mb-3">
+      <label for="exampleInputName1" class="form-label" class="tab-labels" >Meno</label>
+      <input type="text" class="form-control" id="exampleInputName1" name="name" [(ngModel)]="user.name" required>
+    </div>
+    <div class="mb-3" style="display: none">
+      <label for="exampleInputUsername1" class="form-label" >Prihlasovacie meno</label>
+      <input type="text" class="form-control" id="exampleInputUsername1" name="username" [(ngModel)]="user.username" required>
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputDepartment1" class="form-label" class="tab-labels">Odelenie</label>
+      <select id="exampleInputDepartment1" class="form-select"  name="department" [(ngModel)]="user.department">
+        <option value="OCNE" >Ocne</option>
+        <option value="CHIRURGIA">Chirurgia</option>
+        <option value="KOZNE">Kozne</option>
+        <option value="PSYCHIATRIA">Psychiatria</option>
+        <option value="KARDIOLOGIA">Kardiologia</option>
+        <option value="ORTOPEDIA">Ortopedia</option>
+      </select>
+    </div>
+    <div class="centerbtn">
+      <button type="submit" class="btn btn-primary" >Uložiť</button>
+    </div>
+  </form>
+
+  <!--<app-course-form *ngIf="item" [course]="item"></app-course-form>-->
+</div>

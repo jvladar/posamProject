@@ -1,0 +1,42 @@
+<app-navbar-doctor [doctor_id]="doctor_id"></app-navbar-doctor>
+<div class="container">
+  <div class="fontik">
+    <p>Údaje pacienta</p>
+  </div>
+  <form (submit)="submit(form)" #form=ngForm *ngIf="patient"
+        [class.was-validated]="form.submitted || form.touched">
+    <div class="mb-3">
+      <label for="exampleInputName1" class="form-label" class="tab-labels">Meno</label>
+      <input type="text" class="form-control" id="exampleInputName1" name="name" [(ngModel)]="patient.name" required>
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputUsername1" class="form-label" class="tab-labels">Identifikačné čislo</label>
+      <input type="text" class="form-control" id="exampleInputUsername1" name="id_number" [(ngModel)]="patient.id_number" required>
+    </div>
+    <div class="centerbtn">
+      <button type="submit" class="btn">Upraviť údaje</button>
+    </div>
+  </form>
+  <br>
+  <br>
+  <h1>Návštevy</h1>
+  <table class="table table-bordered table-striped table-hover" datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger">
+    <thead>
+    <tr>
+      <th>Popis</th>
+      <th>Čas</th>
+      <th class="icon-link-column"></th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <ng-container *ngFor="let visit of patient?.visits">
+      <tr>
+        <td>{{visit.description}}</td>
+        <td>{{visit.dateandtime | date: 'yyyy-MM-dd HH:mm':'GMT'}}</td>
+        <td><button type="button" class="btn btn-secondary" [routerLink]="['/calendar',doctor_id, visit.id,'edit']"><i class="fa-regular fa-pen-to-square"></i></button></td>
+      </tr>
+    </ng-container>
+    </tbody>
+  </table>
+</div>

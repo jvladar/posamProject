@@ -1,0 +1,18 @@
+<app-navbar-doctor [doctor_id]="doctor_id"></app-navbar-doctor>
+<div class="container">
+  <div class="fontik">
+    <p>Pridať pacienta</p>
+  </div>
+  <form (submit)="submit(form)" #form=ngForm [class.was-validated]="form.submitted || form.touched">
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Meno</label>
+      <input type="text" class="form-control" id="exampleInputEmail1" name="name" [(ngModel)]="patient.name" required>
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputEmail2" class="form-label">Identifikačné číslo</label>
+      <input type="text" class="form-control" id="exampleInputEmail2" name="username" [(ngModel)]="patient.id_number" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Uložiť pacienta</button>
+  </form>
+  <br>
+</div>

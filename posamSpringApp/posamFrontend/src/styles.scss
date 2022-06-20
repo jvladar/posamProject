@@ -1,0 +1,35 @@
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
+
+html, body {
+  height: 100%;
+}
+
+* {
+  font-family: 'Roboto Slab', serif;
+}
+
+.tab-labels{
+  font-size: x-large;
+  padding-bottom: 1%;
+  padding-top: 1rem;
+}
+.centerbtn{
+  text-align: center;
+  font-size: large;
+}
+th{
+  font-size: large;
+}
+.nav-link{
+  font-size: x-large;
+}
+.navbar-brand{
+  font-size: xx-large;
+  padding: 1rem;
+}
+
+.fontik{
+  text-align: center;
+  font-size: xx-large;
+}

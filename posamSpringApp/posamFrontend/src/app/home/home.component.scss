@@ -1,0 +1,78 @@
+
+.text-center {
+  text-align: center;
+  padding-bottom: 5rem;
+  font-size: xx-large;
+  color: black;
+  display:block;
+  text-decoration: none;
+}
+.btn {
+  background-color: #9c27b0;
+  font-size: xx-large;
+  color:white;
+  transition: all .5s ease;
+  border-color: #4a148c;
+  border-width: 3px;
+}
+.btn:hover {
+  background: #4a148c;
+  transform: translateY(-3px);
+}
+
+.btn:hover .zmdi {
+  color: #5acbda;
+}
+
+.btn .zmdi {
+  display: block;
+  color: #ff8a6b;
+  margin-bottom: 8px;
+  transition: all .5s ease;
+}
+.imgset{
+  padding-top: 2rem;
+  width: 12rem;
+  padding-bottom: 2rem;
+}
+
+.colorsection {
+  text-align: center;
+  width: 500px;
+  min-height: 500px;
+  background: #9b27b0;
+  border-style: solid;
+  border-color: black;
+  padding-top: 5rem;
+  border-radius: 10px;
+}
+.colorsection:hover {
+  background: #9c17b4;
+  transform: translateY(+2px);
+  transition: all .3s ease;
+}
+.warning{
+  font-size: large;
+  color: black;
+  background-color: red;
+  opacity: 0.7;
+  border-radius: 5px;
+}
+
+.fade-in {
+  opacity: 1;
+  animation-name: fadeInOpacity;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in;
+  animation-duration: 1s;
+}
+
+@keyframes fadeInOpacity {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+

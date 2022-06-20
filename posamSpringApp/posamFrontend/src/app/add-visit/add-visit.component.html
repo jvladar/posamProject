@@ -1,0 +1,25 @@
+<app-navbar-doctor [doctor_id]="doctor_id"></app-navbar-doctor>
+<div class="container">
+  <div class="fontik">
+    <p>Pridať návštevu</p>
+  </div>
+  <form (submit)="submit(form)" #form=ngForm [class.was-validated]="form.submitted || form.touched">
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Popis</label>
+      <input type="text" class="form-control" id="exampleInputEmail1" name="name" [(ngModel)]="visit.description" required>
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputEmail2" class="form-label">Čas</label>
+      <input type="datetime-local" class="form-control" id="exampleInputEmail2" name="username" [(ngModel)]="visit.dateandtime" required>
+    </div>
+    <div class="select">
+      <label for="exampleInputEmail2" class="form-label">Pacient</label>
+      <select [(ngModel)]="pat" name="yakooo" class="form-control col-lg-8" required>
+        <option *ngFor="let patient of patients"  [ngValue]="patient"> {{patient.name}} - {{patient.id_number}}</option>
+      </select>
+    </div>
+    <br>
+    <button type="submit" class="btn btn-primary">Uložiť pacienta</button>
+  </form>
+  <br>
+</div>
