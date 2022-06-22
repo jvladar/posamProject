@@ -26,6 +26,7 @@
       <th>Popis</th>
       <th>Čas</th>
       <th class="icon-link-column"></th>
+      <th class="icon-link-column"></th>
     </tr>
     </thead>
 
@@ -35,6 +36,7 @@
         <td>{{visit.description}}</td>
         <td>{{visit.dateandtime | date: 'yyyy-MM-dd HH:mm':'GMT'}}</td>
         <td><button type="button" class="btn btn-secondary" [routerLink]="['/calendar',doctor_id, visit.id,'edit']"><i class="fa-regular fa-pen-to-square"></i></button></td>
+        <td><a (click)="delete(visit)" class="btn btn-secondary"><i class="fa-solid fa-trash"></i></a></td>
       </tr>
     </ng-container>
     </tbody>

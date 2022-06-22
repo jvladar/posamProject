@@ -28,7 +28,7 @@ public class Patient implements Serializable{
     @JoinColumn(name = "id_patient",referencedColumnName = "patient_id")
     private List<Visit> visits = new ArrayList<>();
 
-    @ManyToMany(mappedBy = "patients", cascade = CascadeType.ALL)
+    @ManyToMany(mappedBy = "patients")
     private List<User> users = new ArrayList<>();
 
     public Patient() {
@@ -37,6 +37,13 @@ public class Patient implements Serializable{
     public Patient(String name, Integer id_number) {
         this.name = name;
         this.id_number = id_number;
+    }
+
+    @PreRemove
+    private void removeGroupsFromUsers() {
+        for (User u : users) {
+            u.getPatients().remove(this);
+        }
     }
 
     public Patient(Integer id, String name, Integer id_number,Visit v) {

@@ -4,6 +4,7 @@ import {UsersService} from "../users.service";
 import {Patient} from "../patient";
 import {NgForm} from "@angular/forms";
 import {Subject} from "rxjs";
+import {Visit} from "../visit";
 
 @Component({
   selector: 'app-edit-patient',
@@ -35,6 +36,15 @@ export class EditPatientComponent {
       .subscribe(()=>{
         this.router.navigate(["/patients", this.doctor_id])
       })
+  }
+
+  delete(item : Visit){
+    if(confirm("Naozaj chcete odstrániť túto návštevu ?")) {
+      this.usersService.deleteVisit(item.id)
+        .subscribe(() => {
+          window.location.reload();
+        })
+    }
   }
 
 }

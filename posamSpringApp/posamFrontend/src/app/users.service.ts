@@ -63,7 +63,7 @@ export class UsersService {
     return this.http.post<MessageDetail>("/api/addfingerprint",user)
   }
   addPatient(id : number, patient : Patient){
-    return this.http.post<Patient>("/api/patients"+ id + "/add",patient)
+    return this.http.post<Patient>("/api/patients/"+ id + "/add",patient)
   }
   addVisit(id : number, visit : Visit){
     return this.http.post<Patient>("/api/calendar/"+ id + "/add",visit)

@@ -146,6 +146,51 @@ public class UserStorageServiceImpl implements UserStorageService {
 		return "Bearer " + token;
 	}*/
 
+/*	version: '2'
+	services:
+	postgres-standalone:
+	image: 'postgres:latest'
+	container_name: postgres-standalone
+	environment:
+			- POSTGRES_DB=biometricapp
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=password
+	expose:
+			- "1234" # Publishes 5433 to other containers but NOT to host machine
+	ports:
+			- "1234:1234"
+	volumes:
+			- ./backups:/home/backups
+	command: -p 1234
+	springboot-docker-container:
+	image: springboot-docker-container
+	container_name: springboot-docker-container
+	ports:
+			- 8080:8080
+	build:
+	context: ./
+	dockerfile: Dockerfile
+	depends_on:
+			- postgres-standalone*/
 
+	/*spring:
+	datasource:
+	driver-class-name: org.postgresql.Driver
+	url: jdbc:postgresql://postgre-standalone:1234/biometricapp
+	username: postgres
+	password: password
+	hikari:
+	initialization-fail-timeout: 0
+	jpa:
+	database-platform: org.hibernate.dialect.PostgreSQLDialect
+	generate-ddl: true
+	show-sql: true
+	hibernate:
+	ddl-auto: update*/
+
+	/*#FROM openjdk:8-jre-alpine3.9
+	#ADD target/BlobDemo-0.0.1-SNAPSHOT.jar app.jar
+	#ENTRYPOINT ["java","-jar","app.jar"]
+	#CMD ["-p", "5433"]*/
 
 }
