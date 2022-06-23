@@ -82,7 +82,7 @@ public class DocController {
 
 				s.setMessage("Registrácia užívateľa " + user.getUsername() + " a pridanie odtlačku prebehla úspešne !");
 			}
-			}
+		} else{ s.setMessage("Priložte prst k skeneru");}
 			scanner.CloseDevice();
 
 		return s;
@@ -117,7 +117,7 @@ public class DocController {
 					System.out.println(e);
 				}
 			}
-		}
+		}else{ s.setMessage("Priložte prst k skeneru");}
 		scanner.CloseDevice();
 		return s;
 	}
@@ -171,8 +171,6 @@ public class DocController {
 					new FingerprintImage((bytes), new FingerprintImageOptions().dpi(500)));
 			Integer docId = usersStorageService.findUser(probe);
 			scanner.CloseDevice();
-			System.out.println(docId);
-			System.out.println("opene");
 			/*if(doc != null && doc.getId()>0 ) {
 				String sss = usersStorageService.getJWTToken(doc.getId());
 				System.out.println(sss);

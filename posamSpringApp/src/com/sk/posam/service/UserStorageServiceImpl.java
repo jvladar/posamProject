@@ -26,11 +26,6 @@ public class UserStorageServiceImpl implements UserStorageService {
 	@Autowired
 	private FingerCrudRepository fingerRepository;
 
-	@Autowired
-	private VisitCrudRepository visitRepository;
-
-	@Autowired
-	private PatientCrudRepository patientRepository;
 
 	@Override
 	public void saveUser(User user, String filepath){
